@@ -1,8 +1,8 @@
-package vending.product;
+package vendingOverloaded.product;
 
 public class SaltySnack extends Product {
 
     public String description() {
-        return "This is a Salty Snack";
+        return "This is a Salty Snack: ";
     }
 }

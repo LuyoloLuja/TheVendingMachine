@@ -1,9 +1,9 @@
-package vending;
+package vendingOverloaded;
 
-import vending.product.Product;
-import vending.product.Chocolate;
-import vending.product.SaltySnack;
-import vending.product.SoftDrink;
+import vendingOverloaded.product.Product;
+import vendingOverloaded.product.Chocolate;
+import vendingOverloaded.product.SaltySnack;
+import vendingOverloaded.product.SoftDrink;
 
 public class OverloadedVendingMachine {
     private int softDrinkQty;
@@ -18,22 +18,21 @@ public class OverloadedVendingMachine {
 
     // --- BUY METHODS --- //
     void buy(SoftDrink softDrink) {
-        if (softDrink != null) {
+        if (softDrink != null && softDrinkQty > 0) {
             softDrinkQty--;
         }
     }
     void buy(SaltySnack saltySnack) {
-        if (saltySnack != null) {
+        if (saltySnack != null && saltySnacksQty > 0) {
             saltySnacksQty--;
         }
     }
     void buy(Chocolate chocolate) {
-        if (chocolate != null) {
+        if (chocolate != null && chocolatesQty > 0) {
             chocolatesQty--;
         }
     }
     void buy(Product product) {
-
         if (product instanceof SoftDrink) {
             softDrinkQty--;
         } else if (product instanceof SaltySnack) {
@@ -71,14 +70,33 @@ public class OverloadedVendingMachine {
 
     // --- GET STOCK METHODS --- //
     int getStock(SoftDrink softdrink) {
-        return softDrinkQty;
+        int softDrinkStock = 0;
+
+        if (softdrink != null) {
+            return softDrinkQty += softDrinkStock;
+        }
+        return softDrinkStock;
     }
 
     int getStock(SaltySnack saltySnack) {
-        return saltySnacksQty;
+        int saltySnacksStock = 0;
+
+        if (saltySnack != null) {
+            return saltySnacksQty +=  saltySnacksStock;
+        }
+        return saltySnacksStock;
     }
 
     int getStock(Chocolate chocolate) {
-        return chocolatesQty;
+        int chocolatesStock = 0;
+
+        if (chocolate != null) {
+            return chocolatesQty += chocolatesStock;
+        }
+        return chocolatesStock;
+    }
+
+    int getStock() {
+        return softDrinkQty + saltySnacksQty + chocolatesQty;
     }
 }
