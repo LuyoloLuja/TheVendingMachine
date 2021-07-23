@@ -1,9 +1,9 @@
-package vendingOverloaded;
+package vending;
 
-import vendingOverloaded.product.Product;
-import vendingOverloaded.product.Chocolate;
-import vendingOverloaded.product.SaltySnack;
-import vendingOverloaded.product.SoftDrink;
+import vending.product.Product;
+import vending.product.Chocolate;
+import vending.product.SaltySnack;
+import vending.product.SoftDrink;
 
 public class OverloadedVendingMachine {
     private int softDrinkQty;
@@ -33,12 +33,22 @@ public class OverloadedVendingMachine {
         }
     }
     void buy(Product product) {
-        if (product instanceof SoftDrink) {
+        if (product != null && (softDrinkQty > 0 || saltySnacksQty > 0 || chocolatesQty > 0)) {
             softDrinkQty--;
-        } else if (product instanceof SaltySnack) {
             saltySnacksQty--;
-        } else if (product instanceof Chocolate) {
             chocolatesQty--;
+        }
+    }
+
+    // --- BUY SPECIFIC PRODUCT METHOD --- //
+    void buy(Product product, int quantity) {
+
+        if (product instanceof SoftDrink && softDrinkQty > 0) {
+            softDrinkQty -= quantity;
+        } else if (product instanceof SaltySnack && saltySnacksQty > 0) {
+            saltySnacksQty -= quantity;
+        } else if (product instanceof Chocolate && chocolatesQty > 0) {
+            chocolatesQty -= quantity;
         }
     }
 
@@ -59,12 +69,22 @@ public class OverloadedVendingMachine {
         }
     }
     void addStock(Product product) {
-        if (product instanceof SoftDrink) {
-            softDrinkQty++;
-        } else if (product instanceof SaltySnack) {
-            saltySnacksQty++;
-        } else if (product instanceof Chocolate) {
-            chocolatesQty++;
+        if (product != null) {
+            softDrinkQty += 3;
+            saltySnacksQty += 3;
+            chocolatesQty += 3;
+        }
+    }
+
+    // --- ADD STOCK METHOD FOR A SPECIFIC PRODUCT --- //
+    void addStock(Product product, int quantity) {
+
+        if(product instanceof SoftDrink) {
+            softDrinkQty += quantity;
+        } else if(product instanceof SaltySnack) {
+            saltySnacksQty += quantity;
+        } else if(product instanceof Chocolate) {
+            chocolatesQty += quantity;
         }
     }
 

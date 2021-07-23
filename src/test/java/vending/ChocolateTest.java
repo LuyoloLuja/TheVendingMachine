@@ -1,9 +1,10 @@
-package vendingOverloaded;
+package vending;
 
 import org.junit.jupiter.api.Test;
-import vendingOverloaded.product.Chocolate;
-import vendingOverloaded.product.SaltySnack;
-import vendingOverloaded.product.SoftDrink;
+import vending.product.Chocolate;
+import vending.product.Product;
+import vending.product.SaltySnack;
+import vending.product.SoftDrink;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ChocolateTest {
@@ -69,6 +70,17 @@ public class ChocolateTest {
     }
 
     @Test
+    public void shouldBeAbleToAddAndBuyAlUsingProductMethod() {
+        OverloadedVendingMachine overloadedVendingMachine = new OverloadedVendingMachine(0, 0, 0);
+        Product product = new Product();
+
+        overloadedVendingMachine.addStock(product);
+        overloadedVendingMachine.buy(product);
+
+        assertEquals(6, overloadedVendingMachine.getStock());
+    }
+
+    @Test
     public void shouldNotBeAbleToBuyIfThereIsNoStockAvailable() {
         OverloadedVendingMachine overloadedVendingMachine = new OverloadedVendingMachine(0, 0, 0);
         SoftDrink softDrink = new SoftDrink();
@@ -81,4 +93,16 @@ public class ChocolateTest {
 
         assertEquals(0, overloadedVendingMachine.getStock());
     }
+
+    @Test
+    public void shouldBeAbleToAddAndBuyChocolateUsingTwoArguments() {
+        OverloadedVendingMachine overloadedVendingMachine = new OverloadedVendingMachine(0, 0, 0);
+        Chocolate chocolate = new Chocolate();
+
+        overloadedVendingMachine.addStock(chocolate, 5);
+        overloadedVendingMachine.buy(chocolate, 1);
+
+        assertEquals(4, overloadedVendingMachine.getStock());
+    }
+
 }
