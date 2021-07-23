@@ -104,4 +104,16 @@ public class SoftDrinkTest {
 
         assertEquals(4, overloadedVendingMachine.getStock());
     }
+
+    @Test
+    public void shouldBeAbleToUseChildObject() {
+        OverloadedVendingMachine overloadedVendingMachine = new OverloadedVendingMachine(0, 0, 0);
+        Product softDrinkProduct = new SoftDrink();
+        SoftDrink softDrink = new SoftDrink();
+
+        overloadedVendingMachine.addStock(softDrinkProduct, 5);
+        overloadedVendingMachine.buy(softDrinkProduct, 2);
+
+        assertEquals(3, overloadedVendingMachine.getStock(softDrink));
+    }
 }

@@ -105,4 +105,16 @@ public class ChocolateTest {
         assertEquals(4, overloadedVendingMachine.getStock());
     }
 
+    @Test
+    public void shouldBeAbleToUseChildObject() {
+        OverloadedVendingMachine overloadedVendingMachine = new OverloadedVendingMachine(0, 0, 0);
+        Product chocolateProduct = new Chocolate();
+        Chocolate chocolate = new Chocolate();
+
+        overloadedVendingMachine.addStock(chocolateProduct, 5);
+        overloadedVendingMachine.buy(chocolateProduct, 2);
+
+        assertEquals(3, overloadedVendingMachine.getStock(chocolate));
+    }
+
 }
