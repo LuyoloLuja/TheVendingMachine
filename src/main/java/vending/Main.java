@@ -28,10 +28,10 @@ public class Main {
         overloadedVendingMachine.addStock(chocolate);
         overloadedVendingMachine.addStock(chocolate);
 
-        // add all products
+        // add all products at once
         overloadedVendingMachine.addStock(product);
 
-        // buy products
+        // buy all products at once
         overloadedVendingMachine.buy(softDrink);
         overloadedVendingMachine.buy(saltySnack);
         overloadedVendingMachine.buy(chocolate);
