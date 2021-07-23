@@ -80,7 +80,6 @@ public class SaltySnackTest {
         overloadedVendingMachine.buy(chocolate);
         overloadedVendingMachine.buy(saltySnack);
 
-
         assertEquals(0, overloadedVendingMachine.getStock());
     }
 }

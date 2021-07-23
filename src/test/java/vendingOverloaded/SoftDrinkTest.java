@@ -79,7 +79,6 @@ public class SoftDrinkTest {
         overloadedVendingMachine.buy(chocolate);
         overloadedVendingMachine.buy(saltySnack);
 
-
         assertEquals(0, overloadedVendingMachine.getStock());
     }
 }
