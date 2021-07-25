@@ -22,7 +22,7 @@ public class ExtendableVendingMachine {
             saltySnacksQty--;
         } else if (product instanceof Chocolate && chocolatesQty > 0) {
             chocolatesQty--;
-        } else if (product instanceof Candy && chocolatesQty > 0) {
+        } else if (product instanceof Candy && candyQty > 0) {
             candyQty--;
         }
     }
@@ -31,11 +31,11 @@ public class ExtendableVendingMachine {
 
         if (product instanceof SoftDrink && softDrinkQty > 0) {
             softDrinkQty -= quantity;
-        } else if (product instanceof SaltySnack && softDrinkQty > 0) {
+        } else if (product instanceof SaltySnack && saltySnacksQty > 0) {
             saltySnacksQty -= quantity;
         } else if (product instanceof Chocolate && chocolatesQty > 0) {
             chocolatesQty -= quantity;
-        } else if (product instanceof Candy && chocolatesQty > 0) {
+        } else if (product instanceof Candy && candyQty > 0) {
             candyQty -= quantity;
         }
     }
