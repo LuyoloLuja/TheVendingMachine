@@ -1,9 +1,9 @@
-package vending;
+package vendingOverloaded;
 
-import vending.product.Product;
-import vending.product.Chocolate;
-import vending.product.SaltySnack;
-import vending.product.SoftDrink;
+import vendingOverloaded.product.Product;
+import vendingOverloaded.product.Chocolate;
+import vendingOverloaded.product.SaltySnack;
+import vendingOverloaded.product.SoftDrink;
 
 public class OverloadedVendingMachine {
     private int softDrinkQty;

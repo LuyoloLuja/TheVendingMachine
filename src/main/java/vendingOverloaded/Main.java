@@ -1,8 +1,8 @@
-package vending;
-import vending.product.Chocolate;
-import vending.product.Product;
-import vending.product.SaltySnack;
-import vending.product.SoftDrink;
+package vendingOverloaded;
+import vendingOverloaded.product.Chocolate;
+import vendingOverloaded.product.Product;
+import vendingOverloaded.product.SaltySnack;
+import vendingOverloaded.product.SoftDrink;
 
 public class Main {
     public static void main(String[] args) {
@@ -30,6 +30,11 @@ public class Main {
 
         // add all products at once
         overloadedVendingMachine.addStock(product);
+
+        // print the stock before buying
+        System.out.println("------------------------");
+        System.out.println("Stock Before Buying: " + overloadedVendingMachine.getStock());
+        System.out.println("------------------------");
 
         // buy all products at once
         overloadedVendingMachine.buy(softDrink);

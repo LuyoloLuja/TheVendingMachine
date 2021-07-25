@@ -1,4 +1,4 @@
-package vending.product;
+package vendingOverloaded.product;
 
 public class SaltySnack extends Product {
 
