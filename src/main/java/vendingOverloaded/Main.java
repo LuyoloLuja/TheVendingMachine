@@ -31,11 +31,6 @@ public class Main {
         // add all products at once
         overloadedVendingMachine.addStock(product);
 
-        // print the stock before buying
-        System.out.println("------------------------");
-        System.out.println("Stock Before Buying: " + overloadedVendingMachine.getStock());
-        System.out.println("------------------------");
-
         // buy all products at once
         overloadedVendingMachine.buy(softDrink);
         overloadedVendingMachine.buy(saltySnack);
