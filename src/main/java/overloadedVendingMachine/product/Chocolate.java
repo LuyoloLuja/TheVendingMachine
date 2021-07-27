@@ -1,4 +1,4 @@
-package vendingOverloaded.product;
+package overloadedVendingMachine.product;
 
 public class Chocolate extends Product {
 

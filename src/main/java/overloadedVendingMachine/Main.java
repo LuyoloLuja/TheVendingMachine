@@ -1,8 +1,8 @@
-package vendingOverloaded;
-import vendingOverloaded.product.Chocolate;
-import vendingOverloaded.product.Product;
-import vendingOverloaded.product.SaltySnack;
-import vendingOverloaded.product.SoftDrink;
+package overloadedVendingMachine;
+import overloadedVendingMachine.product.Chocolate;
+import overloadedVendingMachine.product.Product;
+import overloadedVendingMachine.product.SaltySnack;
+import overloadedVendingMachine.product.SoftDrink;
 
 public class Main {
     public static void main(String[] args) {

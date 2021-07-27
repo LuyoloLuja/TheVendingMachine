@@ -1,50 +1,50 @@
-package vendingOverloaded;
+package overloadedVendingMachine;
 
 import org.junit.jupiter.api.Test;
-import vendingOverloaded.product.Chocolate;
-import vendingOverloaded.product.Product;
-import vendingOverloaded.product.SaltySnack;
-import vendingOverloaded.product.SoftDrink;
+import overloadedVendingMachine.product.Chocolate;
+import overloadedVendingMachine.product.Product;
+import overloadedVendingMachine.product.SaltySnack;
+import overloadedVendingMachine.product.SoftDrink;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class SoftDrinkTest {
+public class ChocolateTest {
     @Test
-    public void shouldBeAbleToAddSoftDrink() {
+    public void shouldBeAbleToAddChocolate() {
         OverloadedVendingMachine overloadedVendingMachine = new OverloadedVendingMachine(0, 0, 0);
-        SoftDrink softDrink = new SoftDrink();
+        Chocolate chocolate = new Chocolate();
 
-        overloadedVendingMachine.addStock(softDrink);
+        overloadedVendingMachine.addStock(chocolate);
 
-        assertEquals(1, overloadedVendingMachine.getStock(softDrink));
+        assertEquals(1, overloadedVendingMachine.getStock(chocolate));
     }
 
     @Test
-    public void shouldBeAbleToAddMultipleSoftDrinks() {
+    public void shouldBeAbleToAddMultipleChocolates() {
         OverloadedVendingMachine overloadedVendingMachine = new OverloadedVendingMachine(0, 0, 0);
-        SoftDrink softDrink = new SoftDrink();
+        Chocolate chocolate = new Chocolate();
 
-        overloadedVendingMachine.addStock(softDrink);
-        overloadedVendingMachine.addStock(softDrink);
-        overloadedVendingMachine.addStock(softDrink);
+        overloadedVendingMachine.addStock(chocolate);
+        overloadedVendingMachine.addStock(chocolate);
+        overloadedVendingMachine.addStock(chocolate);
 
-        assertEquals(3, overloadedVendingMachine.getStock(softDrink));
+        assertEquals(3, overloadedVendingMachine.getStock(chocolate));
     }
 
     @Test
-    public void shouldBeAbleToAddAndBuySoftDrink() {
+    public void shouldBeAbleToAddAndBuyChocolates() {
         OverloadedVendingMachine overloadedVendingMachine = new OverloadedVendingMachine(0, 0, 0);
-        SoftDrink softDrink = new SoftDrink();
+        Chocolate chocolate = new Chocolate();
 
-        overloadedVendingMachine.addStock(softDrink);
-        overloadedVendingMachine.addStock(softDrink);
-        overloadedVendingMachine.addStock(softDrink);
-        overloadedVendingMachine.addStock(softDrink);
-        overloadedVendingMachine.addStock(softDrink);
+        overloadedVendingMachine.addStock(chocolate);
+        overloadedVendingMachine.addStock(chocolate);
+        overloadedVendingMachine.addStock(chocolate);
+        overloadedVendingMachine.addStock(chocolate);
+        overloadedVendingMachine.addStock(chocolate);
 
-        overloadedVendingMachine.buy(softDrink);
-        overloadedVendingMachine.buy(softDrink);
+        overloadedVendingMachine.buy(chocolate);
+        overloadedVendingMachine.buy(chocolate);
 
-        assertEquals(3, overloadedVendingMachine.getStock(softDrink));
+        assertEquals(3, overloadedVendingMachine.getStock(chocolate));
     }
 
     @Test
@@ -95,12 +95,12 @@ public class SoftDrinkTest {
     }
 
     @Test
-    public void shouldBeAbleToAddAndBuySoftDrinkUsingTwoArguments() {
+    public void shouldBeAbleToAddAndBuyChocolateUsingTwoArguments() {
         OverloadedVendingMachine overloadedVendingMachine = new OverloadedVendingMachine(0, 0, 0);
-        SoftDrink softDrink = new SoftDrink();
+        Chocolate chocolate = new Chocolate();
 
-        overloadedVendingMachine.addStock(softDrink, 5);
-        overloadedVendingMachine.buy(softDrink, 1);
+        overloadedVendingMachine.addStock(chocolate, 5);
+        overloadedVendingMachine.buy(chocolate, 1);
 
         assertEquals(4, overloadedVendingMachine.getStock());
     }
@@ -108,12 +108,13 @@ public class SoftDrinkTest {
     @Test
     public void shouldBeAbleToUseChildObject() {
         OverloadedVendingMachine overloadedVendingMachine = new OverloadedVendingMachine(0, 0, 0);
-        Product softDrinkProduct = new SoftDrink();
-        SoftDrink softDrink = new SoftDrink();
+        Product chocolateProduct = new Chocolate();
+        Chocolate chocolate = new Chocolate();
 
-        overloadedVendingMachine.addStock(softDrinkProduct, 5);
-        overloadedVendingMachine.buy(softDrinkProduct, 2);
+        overloadedVendingMachine.addStock(chocolateProduct, 5);
+        overloadedVendingMachine.buy(chocolateProduct, 2);
 
-        assertEquals(3, overloadedVendingMachine.getStock(softDrink));
+        assertEquals(3, overloadedVendingMachine.getStock(chocolate));
     }
+
 }
