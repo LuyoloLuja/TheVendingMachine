@@ -16,9 +16,10 @@ public class ExceptionalVendingMachine {
 
     void buy(Product product) throws ProductNotFoundException {
 
-        if (!(product instanceof SoftDrink) || !(product instanceof SaltySnack) || !(product instanceof Chocolate)) {
-            throw new InvalidProductException("Product Not found, please enter an available product.");
-        }
+        // TO DO --- fix this statement to run only when one condition is met
+//        if (!(product instanceof SoftDrink) || !(product instanceof SaltySnack) || !(product instanceof Chocolate)) {
+//            throw new InvalidProductException("Product Not found, please enter an available product.");
+//        }
 
         if (product instanceof SoftDrink) {
             if (softDrinkQty <= 0) {
@@ -68,6 +69,4 @@ public class ExceptionalVendingMachine {
             return softDrinkQty + saltySnacksQty + chocolatesQty;
         }
     }
-
-
 }

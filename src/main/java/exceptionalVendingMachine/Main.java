@@ -6,7 +6,7 @@ import exceptionalVendingMachine.product.*;
 public class Main {
 
     public static void main(String[] args) throws ProductNotFoundException {
-        ExceptionalVendingMachine exceptionalVendingMachine = new ExceptionalVendingMachine( 0, 0, 0);
+        ExceptionalVendingMachine exceptionalVendingMachine = new ExceptionalVendingMachine( 1, 2, 3);
 
         SoftDrink softDrink = new SoftDrink();
         SaltySnack saltySnack = new SaltySnack();
@@ -14,8 +14,8 @@ public class Main {
 
         try {
             // should throw an exception -- InvalidProductException
-            // Candy candy = new Candy();
-            // exceptionalVendingMachine.addStock(candy, 3);
+//             Candy candy = new Candy();
+//             exceptionalVendingMachine.addStock(candy, 3);
 
             // should throw exceptions -- SoftDrinksOutOfStockException, SaltyCracksAllEatenException && ChocolatesAllGoneException
             // exceptionalVendingMachine.addStock(softDrink, 0);
@@ -28,10 +28,12 @@ public class Main {
             exceptionalVendingMachine.addStock(chocolate, 9);
 
             // print the stock before buying
+            System.out.println("-------------------------");
             System.out.println("-- Stock Before Buying --");
-            System.out.println("Soft Drinks: " +  exceptionalVendingMachine.getStock(softDrink));
-            System.out.println("Salty Snacks: " +  exceptionalVendingMachine.getStock(saltySnack));
-            System.out.println("Chocolates: " +  exceptionalVendingMachine.getStock(chocolate));
+            System.out.println("-------------------------");
+            System.out.println(softDrink.description() +  exceptionalVendingMachine.getStock(softDrink));
+            System.out.println(saltySnack.description() +  exceptionalVendingMachine.getStock(saltySnack));
+            System.out.println(chocolate.description() +  exceptionalVendingMachine.getStock(chocolate));
 
             // buy products using 2 argument overloading method
             exceptionalVendingMachine.buy(softDrink);
@@ -40,7 +42,9 @@ public class Main {
 
             // print results
             System.out.println("");
+            System.out.println("------------------------");
             System.out.println("-- Stock After Buying --");
+            System.out.println("------------------------");
             System.out.println(softDrink.description() + exceptionalVendingMachine.getStock(softDrink));
             System.out.println(saltySnack.description() + exceptionalVendingMachine.getStock(saltySnack));
             System.out.println(chocolate.description() + exceptionalVendingMachine.getStock(chocolate));
